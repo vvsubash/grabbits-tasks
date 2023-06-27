@@ -1,12 +1,14 @@
 <template>
   <div>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 
 <script setup lang="ts">
 
-const mainStore = useMainStore()
+const mainStore = useMainStore();
 
-const setLoggedInState = () => mainStore.setLoggedInState(!mainStore.isLoggedIn)
+
 </script>
