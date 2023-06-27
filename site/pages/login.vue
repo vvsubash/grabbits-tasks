@@ -16,14 +16,27 @@
 </template>
 
 <script setup lang="ts">
-import { routerKey } from 'vue-router';
+const mainStore = useMainStore()
+
 
 const userName = ref('')
 const password = ref(null)
 
-const login = () => {
+const login = async () => {
+    const { data, pending, error, refresh } = await useFetch('/api/auth',{
+        method: 'POST',
+        body: {
+            userName: userName.value,
+            password: password.value
+        }
+    })
 
-    navigateTo('/')
+    if(data.value?.message === 'ok') {
+        mainStore.setLoggedInState(true);
+        navigateTo('/')
+    } else {
+        alert(data.value?.message)
+    }
 }
 </script>
 
