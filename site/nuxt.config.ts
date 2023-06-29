@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://unpkg.com/mvp.css'
+          href: 'https://classless.de/classless.css'
         }
       ]
     }
