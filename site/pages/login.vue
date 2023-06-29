@@ -12,6 +12,8 @@
 
             <button @click="login">Submit</button>
         </div>
+
+        <p>User Name: root; Password: pass</p>
     </div>
 </template>
 
